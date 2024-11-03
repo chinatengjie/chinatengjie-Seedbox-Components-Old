@@ -497,10 +497,10 @@ function Tweaked_BBR {
     normal_1; echo "Updating Kernel"; normal_2
     distro_codename="$(source /etc/os-release && printf "%s" "${VERSION_CODENAME}")"
     if [[ $distro_codename = buster ]]; then
-    echo "deb http://deb.debian.org/debian buster-backports main" | sudo tee -a /etc/apt/sources.list
+    echo "deb http://archive.debian.org/debian buster-backports main" | sudo tee -a /etc/apt/sources.list
     apt-get -qqy update && apt -qqyt buster-backports upgrade
     elif [[ $distro_codename = bullseye ]]; then
-    echo "deb http://deb.debian.org/debian bullseye-backports main" | sudo tee -a /etc/apt/sources.list
+    echo "deb http://archive.debian.org/debian bullseye-backports main" | sudo tee -a /etc/apt/sources.list
     apt-get -qqy update && apt -qqyt bullseye-backports upgrade
     fi
     wget https://raw.githubusercontent.com/chinatengjie/chinatengjie-Seedbox-Components-Old/main/Miscellaneous/BBR/BBR.sh && chmod +x BBR.sh
